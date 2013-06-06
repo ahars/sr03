@@ -1,0 +1,8 @@
+// IDL : Chatroom.idl
+
+interface ChatRoom {
+
+	void login_chatroom();
+	void receive();
+	void send();
+};
