@@ -1,0 +1,15 @@
+taux.php
+
+<?php
+	header("content-type: application/xml");
+	print("<?xmlversin=\"1.0\" encoding=\"UTF-8\"?>\n");
+	print("<taux>\n");
+	print("1.5\n");
+	print("</taux>\n")
+?>
+
+
+tuxa.sme.utc/~sr03p035/fichier.html
+
+<applet code = "MyApplet.class" width = ... heigth = ...>
+</applet>

@@ -1,0 +1,28 @@
+# UV : SR03 - TD03
+# Auteurs : Jin Sun - Antoine Hars
+# Fichier : td03.txt
+
+1) 
+nc tuxa.sme.utc 80
+GET / HTTP/1.0\r\n
+
+2) 
+nc proxyweb.utc.fr 3128
+GET http://google.fr HTTP/1.0\r\n
+
+nc proxyweb.utc.fr 3128
+GET http://google.com HTTP/1.0\r\n
+
+//TODO empêcher la redirection..
+
+3)
+
+4)
+nc tuxa.sme.utc 80
+POST /~sr03/phpinfo/print_r_request.php?toto=tata
+
+(optionnel..)
+nc tuxa.sme.utc 80
+GET /~sr03/phpinfo/print_r_request.php?toto=tata
+
+

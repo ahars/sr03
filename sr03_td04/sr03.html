@@ -1,0 +1,55 @@
+<!--
+ UV : SR03 - TD04
+ Auteurs : Jin Sun - Antoine Hars
+ Fichier : sr03.html
+-->
+
+<!doctype html>
+<html>
+	<head>
+		<title>SR03::TD04</title>
+		<meta charset = "utf-8">
+		<script src = "http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type = "text/javascript">
+			function getStudentList(name) {
+				$.ajax({ // fonction permettant de faire de l'ajax
+					dataType: "xml",
+					type: "GET", // methode de transmission des données au fichier php
+					url: "http://tuxa.sme.utc/~sr03/phpinfo/studentdata.php", // url du fichier
+					data: "debutnom="+name, // données à transmettre
+					success: function(result){ // si l'appel a bien fonctionné
+						if (result) { // si la connexion en php a fonctionnée
+							var etu = $(result).find('utcstudent');
+							var content = '';
+							for (var i=0;i<etu.length;i++) {
+								var firstname = $(etu[i]).find('firstname').text();
+								var lastname = $(etu[i]).find('lastname').text();
+								content += '<tr><td>'+firstname+'</td><td>'+lastname+'</td></tr>';
+							}
+							$("#result").html("<table>" + content + "</table>");
+							// on désactive l'affichage du formulaire et on affiche un message de bienvenue à la place
+						}
+						else { // si la connexion en php n'a pas fonctionnée
+							// on affiche un message d'erreur dans le span prévu à cet effet
+						}
+					},
+					error:function(xmlhttp, status, error){
+					$("#result").html("<span id=\"confirmMsg\">Erreur: " +  status + " " + error + "</span>");
+					},
+				});
+				return false;
+			}
+
+			function displayData() {
+				if ($('#txt').val().length >= 2)
+					getStudentList($('#txt').val());
+				else
+					$('#result').html("");
+			}
+		</script>
+	</head>
+	<body>
+		<input type = "text" id = "txt" onkeyup = "displayData()"/>
+		<div id = "result"></div>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!--
+ UV : SR03 - TD03
+ Auteurs : Jin Sun - Antoine Hars
+ Fichier : form_question5.html
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>formulaire</title>
+	</head>
+	<body>
+		<h1>Formulaire question 5 td03</h1>
+		
+		<form method = "POST" action = "http://tuxa.sme.utc/~sr03/phpinfo/print_r_request.php">
+			Nom : <input type = "text" name = "nom" size = "12"><br/>
+			prenom : <input type = "text" name = "prenom" size = "12"><br/>
+			<input type = "submit" value = "envoi">
+		</form>
+	</body>
+</html>

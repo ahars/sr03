@@ -1,0 +1,6 @@
+// IDL : TheDate.idl
+
+interface TheDate {
+
+    string getTheDate();
+};
